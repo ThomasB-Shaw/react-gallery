@@ -36,7 +36,7 @@ class App extends Component {
        <Header />
         <p>Gallery goes here</p>
         <img src="images/goat_small.jpg"/>
-      
+        
       </div>
     );
   }
