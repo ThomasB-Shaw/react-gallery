@@ -30,13 +30,23 @@ class App extends Component {
     })
   }
 
+  clickDescription = () => {
+    console.log('Click Description', this.state.picsArray.description)
+  }
+
   render() {
     return (
       <div className="App">
        <Header />
         <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
-        
+        {this.state.picsArray.map((image) => {
+          return <ul>
+              <li key={image.id}>
+               <img src={image.path} alt={image.description} onClick={() => this.clickDescription(image.id)}></img>
+               <button id='like'>Like This Image</button>
+              </li> 
+          </ul>
+        })}
       </div>
     );
   }

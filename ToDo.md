@@ -23,7 +23,7 @@
 [] Swap the image with the description on click
 [] Display the number likes for each item and include a like button
 [] When the like button is clicked, use Axios to update (PUT) the like count /gallery/like/:id.
-[] Update the gallery each time a like button is clicked.
+[] Update the gallery each time a like button is clicked
 ### BACK END
 [X] Review GET and PUT Routes provided
 [X] Import axios to app.js
