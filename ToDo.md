@@ -16,23 +16,23 @@
     [X] Create Header
 [X] Set up on mount function
 [X] Set up GET Axios
-[] Set up PUT Axios function
+[X] Set up PUT Axios function
 [] Break into components
     [] GalleryList
     [] GalleryItem
 [] Swap the image with the description on click
-[] Display the number likes for each item and include a like button
-[] When the like button is clicked, use Axios to update (PUT) the like count /gallery/like/:id.
-[] Update the gallery each time a like button is clicked
+[X] Display the number likes for each item and include a like button
+[X] When the like button is clicked, use Axios to update (PUT) the like count /gallery/like/:id.
+[X] Update the gallery each time a like button is clicked
 ### BACK END
 [X] Review GET and PUT Routes provided
 [X] Import axios to app.js
 
 ### Styling
     [] Align in 'box' format
-    [] Background color of the page
+    [X] Background color of the page
     [] Font family and size
-    [] Text color & or background color of tasks to show whether or not they have been completed
+    [] Text color & or background color of image blocks
 `
 
 ### MISC
