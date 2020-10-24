@@ -7,7 +7,8 @@ import './App.css';
 
 class App extends Component {
   state = {
-    picsArray: []
+    picsArray: [],
+    descriptionStatus: false
   }
 
   componentDidMount = () => {
@@ -51,6 +52,14 @@ class App extends Component {
     })
   }
 
+  descriptionUpdate = () => {
+    console.log('clicked', this.state.descriptionStatus);
+
+    this.setState({
+        descriptionStatus: !this.state.descriptionStatus
+    })
+}
+
   render() {
     return (
       <div className="App">
@@ -59,7 +68,10 @@ class App extends Component {
         <ul>
         {this.state.picsArray.map((image) => {
           return <li key={image.id}>
-               <img src={image.path} alt={image.description} onClick={() => this.clickDescription(image.description)}></img>
+               <img src={image.path} alt={image.description} onClick={() => this.descriptionUpdate(image.descriptionStatus)}></img>
+               {this.state.descriptionStatus === true &&
+                    <p>{image.description}</p>
+                }
                <p>{image.likes}</p>
                <button id='like' onClick={() => this.likeImage(image.id)}>Like This Image</button>
               </li> 
