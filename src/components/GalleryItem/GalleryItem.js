@@ -24,8 +24,8 @@ class GalleryItem extends Component {
     })
   }
 
-  descriptionUpdate = () => {
-    console.log('clicked', this.props.descriptionStatus);
+  descriptionUpdate = (image) => {
+    console.log('clicked', image);
 
     this.setState({
         descriptionStatus: !this.props.descriptionStatus
