@@ -32,8 +32,8 @@
     [X] Align in 'box' format
     [X] Background color of the page
     [] Font family and size
-    [] Text color & or background color of image blocks
-`
+    [X] Text color & or background color of image blocks
+
 
 ### MISC
 [X] Read Instructions Over
@@ -41,5 +41,5 @@
     [X] Friday
     [X] Saturday
     [X] Sunday
-[] Complete README.md
+[X] Complete README.md
 [] Todo list finish, all tasks complete
