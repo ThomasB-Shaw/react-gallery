@@ -23,42 +23,8 @@ class GalleryItem extends Component {
     })
   }
 
-//   descriptionUpdate = (imageID) => {
-//     console.log('Click Image!');
-//     axios({
-//       method: 'PUT',
-//       url: `/gallery/descriptionStatus/${imageID}`,
-//       data: {id: imageID} // ZERO IDEA WHY THIS IS WORKING HERE
-//     }).then((response) => {
-//       console.log('in PUT', response);
-//       this.props.getPics();
-//     }).catch((error) => {
-//       console.log(error);
-//     })
-// }
-
-//   pickRender = (image) => {
-//     if (image.descriptionStatus === false) {
-//     return (<div className="GalleryItem">
-//       <li key={image.id}>
-//            <img src={image.path} alt={image.description} onClick={() => this.descriptionUpdate(image.id)}></img>
-//            <p>{image.likes}</p>
-//            <button id='like' onClick={() => this.likeImage(image.id)}>Like This Image</button>
-//           </li> 
-//   </div>
-//     )
-//   } else if (image.descriptionStatus === true) {
-//     return (<div className="GalleryItem">
-//       <li key={image.id}>
-//            <p onClick={() => this.descriptionUpdate(image.id)}>{image.description}</p>
-//            <p className="textBox">{image.likes}</p>
-//            <button id='like' onClick={() => this.likeImage(image.id)}>Like This Image</button>
-//           </li> 
-//   </div>
-//     )
-//   }
-// }
-
+  // Flips the state of the toggle display to play against the conditional render
+  // This will either display the text box or image per item based on its status
 updateToggleDisplay = () => {
   console.log('It was', this.state.toggleDisplay);
 
@@ -70,6 +36,7 @@ updateToggleDisplay = () => {
   render() {
     return ( <div className='galleryItem'>
       <li>
+        {/* Conditional Render using ternary operator to display image or textbox. Based on toggleDisplay */}
       {this.state.toggleDisplay ?
       <img src={this.props.image.path} alt={this.props.image.description} onClick={this.updateToggleDisplay}></img>
       :
