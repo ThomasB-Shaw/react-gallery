@@ -41,3 +41,11 @@ body {
 ul {
   display: inline;
 }
+
+.GalleryItem{
+  display: inline-block;
+}
+
+.textBox{
+  border: 200px;
+}

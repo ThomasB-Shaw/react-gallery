@@ -4,11 +4,6 @@ import axios from 'axios';
 
 class GalleryItem extends Component {
 
-
-  // On Click from img black will fire off
-  clickDescription = (imageDescription) => {
-    console.log('Click Description', imageDescription);
-  }
   //PUT Update Here
   likeImage = (imageID) => {
     console.log('Click Like!');
@@ -24,11 +19,17 @@ class GalleryItem extends Component {
     })
   }
 
-  descriptionUpdate = (image) => {
-    console.log('clicked', image);
-
-    this.setState({
-        descriptionStatus: !this.props.descriptionStatus
+  descriptionUpdate = (imageID) => {
+    console.log('Click Image!');
+    axios({
+      method: 'PUT',
+      url: `/gallery/descriptionStatus/${imageID}`,
+      data: {id: imageID} // ZERO IDEA WHY THIS IS WORKING HERE
+    }).then((response) => {
+      console.log('in PUT', response);
+      this.props.getPics();
+    }).catch((error) => {
+      console.log(error);
     })
 }
 
@@ -36,7 +37,7 @@ class GalleryItem extends Component {
     if (image.descriptionStatus === false) {
     return (<div className="GalleryItem">
       <li key={image.id}>
-           <img src={image.path} alt={image.description} onClick={() => this.descriptionUpdate(image.descriptionStatus)}></img>
+           <img src={image.path} alt={image.description} onClick={() => this.descriptionUpdate(image.id)}></img>
            <p>{image.likes}</p>
            <button id='like' onClick={() => this.likeImage(image.id)}>Like This Image</button>
           </li> 
@@ -45,8 +46,8 @@ class GalleryItem extends Component {
   } else if (image.descriptionStatus === true) {
     return (<div className="GalleryItem">
       <li key={image.id}>
-           <p onClick={() => this.descriptionUpdate(image.descriptionStatus)}>{image.description}</p>
-           <p>{image.likes}</p>
+           <p onClick={() => this.descriptionUpdate(image.id)}>{image.description}</p>
+           <p className="textBox">{image.likes}</p>
            <button id='like' onClick={() => this.likeImage(image.id)}>Like This Image</button>
           </li> 
   </div>
