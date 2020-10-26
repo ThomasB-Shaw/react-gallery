@@ -16,16 +16,18 @@ router.put('/like/:id', (req, res) => {
     res.sendStatus(200);
 }); // END PUT Route
 
-router.put('/descriptionStatus/:id', (req, res) => {
-    console.log(req.params);
-    const galleryId = req.params.id;
-    for(const galleryItem of galleryItems) {
-        if(galleryItem.id == galleryId) {
-            galleryItem.descriptionStatus = !galleryItem.descriptionStatus
-        }
-    }
-    res.sendStatus(200);
-}); // END PUT Route
+// // Sends info to the server upon request from GalleryItem.js
+// // Flips description status to the opposite of its current state
+// router.put('/descriptionStatus/:id', (req, res) => {
+//     console.log(req.params);
+//     const galleryId = req.params.id;
+//     for(const galleryItem of galleryItems) {
+//         if(galleryItem.id == galleryId) {
+//             galleryItem.descriptionStatus = !galleryItem.descriptionStatus
+//         }
+//     }
+//     res.sendStatus(200);
+// }); // END PUT Route
 
 // GET Route
 router.get('/', (req, res) => {

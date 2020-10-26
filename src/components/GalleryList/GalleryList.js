@@ -33,9 +33,11 @@ class GalleryList extends Component {
 
   render() {
     return (
-      <div className="GalleryList">
-        <GalleryItem picsArray = {this.state.picsArray} getPics = {this.getPics}/>
-      </div>
+      <div className="galleryList">
+      {this.state.picsArray.map((image) => {
+          return <GalleryItem picsArray = {this.state.picsArray} getPics = {this.getPics} image={image}/>
+      })}
+  </div>
     );
   }
 }
